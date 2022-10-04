@@ -13,6 +13,11 @@ font:
     x: 1
     y: 0
 
+cursor:
+  style:
+    shape: Beam
+    blinking: On
+
 # Colors (Ocean Dark by Chris Kempson)
 # modified with some colors from wallpaper
 
