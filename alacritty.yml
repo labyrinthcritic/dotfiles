@@ -1,0 +1,45 @@
+window:
+  opacity: 0.9
+  padding:
+    x: 5
+    y: 5
+  
+font:
+  normal:
+    family: Iosevka
+    style: Regular
+  size: 13
+  offset:
+    x: 1
+    y: 0
+
+# Colors (Ocean Dark by Chris Kempson)
+# modified with some colors from wallpaper
+
+colors:
+  # Default colors
+  primary:
+    background: '0x212433'
+    foreground: '0xbcc7e3'
+
+  # Normal colors
+  normal:
+    black:   '0x2b303b'
+    red:     '0x8d1844'
+    green:   '0xa3be8c'
+    yellow:  '0xebcb8b'
+    blue:    '0x8fa1b3'
+    magenta: '0xb48ead'
+    cyan:    '0x96b5b4'
+    white:   '0xc0c5ce'
+
+  # Bright colors
+  bright:
+    black:   '0x65737e'
+    red:     '0x8d1844'
+    green:   '0xa3be8c'
+    yellow:  '0xebcb8b'
+    blue:    '0x8fa1b3'
+    magenta: '0xb48ead'
+    cyan:    '0x96b5b4'
+    white:   '0xeff1f5'
