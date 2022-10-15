@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun
+	$HOME/.config/rofi/bin/launcher
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -138,4 +138,4 @@ XF86MonBrightness{Up,Down}
 # lock screen
 
 super + q
-	betterlockscreen -l
+	$HOME/.config/rofi/bin/powermenu
