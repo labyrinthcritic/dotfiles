@@ -151,7 +151,7 @@ configuration {
 }
 
 * {
-    background: #212433;
+    background: rgba(12.9%,14.1%,20%, 90%);
     alternate-normal-background: @background;
     foreground: #8fa1b3;
     alternate-normal-foreground: @foreground;

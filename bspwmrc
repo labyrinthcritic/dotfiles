@@ -21,4 +21,5 @@ bspc rule -a Screenkey manage=off
 picom --experimental-backends &
 dunst &
 polybar &
-feh --bg-fill ~/Wallpapers/99tp39phqvq91.jpg &
+~/.cargo/bin/joblin &
+feh --bg-fill ~/Wallpapers/c4lebqofpmq91.jpg &
