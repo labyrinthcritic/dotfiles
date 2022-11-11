@@ -1,0 +1,78 @@
+(defwindow bar
+	:monitor 0
+	:geometry (geometry
+		:width "100%"
+		:anchor "top center"
+	)
+	:stacking "fg"
+	:windowtype "dock"
+	:wm-ignore false
+	(bar)
+)
+
+(defwidget bar []
+	(centerbox
+		(workspaces)
+		(clock)
+		(indicators)
+	)
+)
+
+(defwidget workspaces []
+	(box
+		:halign "start"
+		:class "workspaces"
+		(button :onclick "bspc desktop -f 1" 1)
+		(button :onclick "bspc desktop -f 2" 2)
+		(button :onclick "bspc desktop -f 3" 3)
+		(button :onclick "bspc desktop -f 4" 4)
+		(button :onclick "bspc desktop -f 5" 5)
+	)
+)
+
+(defwidget clock []
+	(box 
+		:class "item"
+		(label :text "${time}")
+	)
+)
+
+(defwidget indicators []
+	(box
+		:halign "end"
+		:space-evenly false
+		:orientation "h"
+		(box :class "item" :space-evenly false
+			(label :class "symbol disk-symbol" :text "")
+			{round(EWW_DISK["/"].used_perc, 0) + "%"}
+		)
+		(box :class "item" :space-evenly false
+			(label :class "symbol memory-symbol" :text "")
+			{round(EWW_RAM.used_mem_perc, 0) + "%"}
+		)
+		(box :class "item" :space-evenly false
+			(label :class "symbol battery-symbol" :text "")
+			{EWW_BATTERY.BAT0.capacity + "%"}
+		)
+		(box :class "item" :space-evenly false
+			(label :class "symbol volume-symbol" :text "墳")
+			{volume + "%"}
+		)
+		(box :class "item" :space-evenly false
+			(label :class "symbol network-symbol" :text "")
+			{network}
+		)
+	)
+)
+
+(defpoll time :interval "1s"
+	"date '+%Y-%m-%d %H:%M:%S'"
+)
+
+(defpoll volume :interval "2s"
+	"pulsemixer --get-volume | cut -d ' ' -f 1"
+)
+
+(defpoll network :interval "5s"
+	"iw wlan0 info | grep -Po '(?<=ssid ).*' || echo 'not connected'"
+)

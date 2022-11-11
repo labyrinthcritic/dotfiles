@@ -1,14 +1,17 @@
 window:
-  opacity: 0.7
+  dimensions:
+    columns: 84
+    lines: 24
   padding:
     x: 5
     y: 5
+  
   
 font:
   normal:
     family: Iosevka
     style: Regular
-  size: 13
+  size: 12
   offset:
     x: 1
     y: 0

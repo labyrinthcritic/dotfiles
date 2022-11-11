@@ -1,0 +1,50 @@
+.bar {
+  background: none;
+  
+  font-family: "Iosevka Nerd Font";
+  font-size: 24px;
+}
+
+.item, .workspaces button {
+  margin: 10px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 15px;
+  box-shadow: none;
+
+  background: #1e1e2e;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+.workspaces button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.symbol {
+  padding-right: 14px;
+}
+
+.disk-symbol {
+  color: #89dceb;
+}
+
+.memory-symbol {
+  color: #a6e3a1;
+}
+
+.battery-symbol {
+  color: #f9e2af;
+  padding-right: 28px;
+}
+
+.volume-symbol {
+  color: #fab387;
+}
+
+.network-symbol {
+  color: #cba6f7;
+  padding-right: 24px;
+}
