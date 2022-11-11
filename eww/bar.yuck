@@ -4,7 +4,8 @@
 		:width "100%"
 		:anchor "top center"
 	)
-	:stacking "fg"
+	:stacking "bg"
+	:reserve (struts :distance "64px" :side "top")
 	:windowtype "dock"
 	:wm-ignore false
 	(bar)
@@ -21,12 +22,12 @@
 (defwidget workspaces []
 	(box
 		:halign "start"
-		:class "workspaces"
-		(button :onclick "bspc desktop -f 1" 1)
-		(button :onclick "bspc desktop -f 2" 2)
-		(button :onclick "bspc desktop -f 3" 3)
-		(button :onclick "bspc desktop -f 4" 4)
-		(button :onclick "bspc desktop -f 5" 5)
+		:class "workspaces item"
+		(box (button :onclick "bspc desktop -f 1" 1))
+		(box (button :onclick "bspc desktop -f 2" 2))
+		(box (button :onclick "bspc desktop -f 3" 3))
+		(box (button :onclick "bspc desktop -f 4" 4))
+		(box (button :onclick "bspc desktop -f 5" 5))
 	)
 )
 
@@ -76,3 +77,9 @@
 (defpoll network :interval "5s"
 	"iw wlan0 info | grep -Po '(?<=ssid ).*' || echo 'not connected'"
 )
+
+(defvar is_selected_workspace_1 "")
+(defvar is_selected_workspace_2 "")
+(defvar is_selected_workspace_3 "")
+(defvar is_selected_workspace_4 "")
+(defvar is_selected_workspace_5 "")

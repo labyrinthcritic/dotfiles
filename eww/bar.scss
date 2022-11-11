@@ -5,7 +5,7 @@
   font-size: 24px;
 }
 
-.item, .workspaces button {
+.item {
   margin: 10px;
   padding: 12px;
 
@@ -19,8 +19,26 @@
 }
 
 .workspaces button {
-  padding-left: 20px;
-  padding-right: 20px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  
+  padding-left: 8px;
+  padding-right: 8px;
+  
+  background: none;
+  box-shadow: none;
+  color: #cdd6f4;
+}
+
+.workspaces .button-selected {
+  background-color: #a6e3a1;
+  border-radius: 7px;
+}
+
+.workspaces .button-selected button {
+  color: #1e1e2e;
+  border-radius: 15px;
 }
 
 .symbol {
