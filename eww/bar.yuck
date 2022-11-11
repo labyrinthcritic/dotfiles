@@ -23,11 +23,15 @@
 	(box
 		:halign "start"
 		:class "workspaces item"
-		(box (button :onclick "bspc desktop -f 1" 1))
-		(box (button :onclick "bspc desktop -f 2" 2))
-		(box (button :onclick "bspc desktop -f 3" 3))
-		(box (button :onclick "bspc desktop -f 4" 4))
-		(box (button :onclick "bspc desktop -f 5" 5))
+		(for workspace in workspaces
+			(box
+				:class {workspace[1]} 
+				(button
+					:onclick "~/bin/change_workspace.sh ${workspace[0]}"
+					{workspace[0]}
+				)
+			)
+		)
 	)
 )
 
@@ -48,7 +52,11 @@
 			{round(EWW_DISK["/"].used_perc, 0) + "%"}
 		)
 		(box :class "item" :space-evenly false
-			(label :class "symbol memory-symbol" :text "")
+			(label :class "symbol cpu-symbol" :text "")
+			{round(EWW_CPU.avg, 0) + "%"}
+		)
+		(box :class "item" :space-evenly false
+			(label :class "symbol memory-symbol" :text "")
 			{round(EWW_RAM.used_mem_perc, 0) + "%"}
 		)
 		(box :class "item" :space-evenly false
@@ -70,7 +78,7 @@
 	"date '+%Y-%m-%d %H:%M:%S'"
 )
 
-(defpoll volume :interval "2s"
+(defpoll volume :interval "1s"
 	"pulsemixer --get-volume | cut -d ' ' -f 1"
 )
 
@@ -78,8 +86,4 @@
 	"iw wlan0 info | grep -Po '(?<=ssid ).*' || echo 'not connected'"
 )
 
-(defvar is_selected_workspace_1 "")
-(defvar is_selected_workspace_2 "")
-(defvar is_selected_workspace_3 "")
-(defvar is_selected_workspace_4 "")
-(defvar is_selected_workspace_5 "")
+(defvar workspaces "[[\"1\", \"button-selected\"], [\"2\", \"\"], [\"3\", \"\"], [\"4\", \"\"], [\"5\", \"\"]]")

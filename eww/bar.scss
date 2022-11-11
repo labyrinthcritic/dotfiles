@@ -49,8 +49,12 @@
   color: #89dceb;
 }
 
-.memory-symbol {
+.cpu-symbol, .memory-symbol {
   color: #a6e3a1;
+}
+
+.memory-symbol {
+  padding-right: 18px;
 }
 
 .battery-symbol {
