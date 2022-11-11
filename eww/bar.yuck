@@ -25,10 +25,10 @@
 		:class "workspaces item"
 		(for workspace in workspaces
 			(box
-				:class {workspace[1]} 
+				:class {workspace == selected_workspace ? "button-selected" : ""} 
 				(button
-					:onclick "~/bin/change_workspace.sh ${workspace[0]}"
-					{workspace[0]}
+					:onclick "~/bin/change_workspace.sh ${workspace}"
+					{workspace}
 				)
 			)
 		)
@@ -86,4 +86,6 @@
 	"iw wlan0 info | grep -Po '(?<=ssid ).*' || echo 'not connected'"
 )
 
-(defvar workspaces "[[\"1\", \"button-selected\"], [\"2\", \"\"], [\"3\", \"\"], [\"4\", \"\"], [\"5\", \"\"]]")
+(defvar workspaces "[1, 2, 3, 4, 5]")
+
+(defvar selected_workspace 2)
