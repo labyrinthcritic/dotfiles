@@ -20,7 +20,7 @@ bspc rule -a Screenkey manage=off
 
 xsetroot -cursor_name left_ptr
 
-picom --experimental-backends &
+picom &
 dunst &
 eww open bar &
 ~/.cargo/bin/joblin &

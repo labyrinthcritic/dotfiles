@@ -86,7 +86,8 @@ super + shift + {1-9,0}
 
 # go to the given desktop
 super + {1-9,0}
-	~/bin/change_workspace.sh '{1-9,10}'
+	bspc desktop -f '{1-9,10}'; \
+	~/bin/update_workspace.sh
 
 #
 # preselect
@@ -129,7 +130,8 @@ super + {Left,Down,Up,Right}
 # volume control
 
 XF86Audio{Raise,Lower}Volume
-	pulsemixer --change-volume {+,-}5
+	pulsemixer --change-volume {+,-}5; \
+	eww update volume=`pulsemixer --get-volume | cut -d ' ' -f 1`
 
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle

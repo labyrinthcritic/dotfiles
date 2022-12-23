@@ -78,14 +78,14 @@
 	"date '+%Y-%m-%d %H:%M:%S'"
 )
 
-(defpoll volume :interval "1s"
+(defpoll volume :interval "3s"
 	"pulsemixer --get-volume | cut -d ' ' -f 1"
 )
 
 (defpoll network :interval "5s"
-	"iw wlan0 info | grep -Po '(?<=ssid ).*' || echo 'not connected'"
+	"iw dev wlan0 link | grep -Po '(?<=SSID: ).*' || echo 'not connected'"
 )
 
 (defvar workspaces "[1, 2, 3, 4, 5]")
 
-(defvar selected_workspace 1)
+(defpoll selected_workspace :interval "2s" "bspc query -D --names -d focused")
