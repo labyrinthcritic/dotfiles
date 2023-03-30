@@ -49,7 +49,7 @@
 		:orientation "h"
 		(box :class "item" :space-evenly false
 			(label :class "symbol disk-symbol" :text "")
-			{round(EWW_DISK["/"].used_perc, 0) + "%"}
+			{disk_usage}
 		)
 		(box :class "item" :space-evenly false
 			(label :class "symbol cpu-symbol" :text "")
@@ -72,6 +72,10 @@
 			{network}
 		)
 	)
+)
+
+(defpoll disk_usage :interval "30s"
+	"df | grep 'nvme0n1p5' | tr -s ' ' | cut -d ' ' -f 5"
 )
 
 (defpoll time :interval "1s"

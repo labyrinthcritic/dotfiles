@@ -9,9 +9,9 @@ window:
   
 font:
   normal:
-    family: Iosevka
+    family: VictorMono Nerd Font
     style: Regular
-  size: 12
+  size: 11
   offset:
     x: 1
     y: 0

@@ -1,8 +1,8 @@
 .bar {
   background: none;
   
-  font-family: "Iosevka Nerd Font";
-  font-size: 24px;
+  font-family: "VictorMono Nerd Font";
+  font-size: 22px;
 }
 
 .item {
@@ -10,8 +10,8 @@
   padding: 12px;
 
   border: none;
-  border-radius: 15px;
-  box-shadow: none;
+  border-radius: 0px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.75);
 
   background: #1e1e2e;
   background-color: #1e1e2e;
@@ -33,7 +33,6 @@
 
 .workspaces .button-selected {
   background-color: #a6e3a1;
-  border-radius: 7px;
 }
 
 .workspaces .button-selected button {
@@ -43,6 +42,7 @@
 
 .symbol {
   padding-right: 14px;
+  font-family: "Iosevka Nerd Font";
 }
 
 .disk-symbol {
