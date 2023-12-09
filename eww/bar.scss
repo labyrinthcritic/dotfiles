@@ -9,13 +9,19 @@
   margin: 10px;
   padding: 12px;
 
-  border: none;
+  /* border: 1px #b4befe solid; */
   border-radius: 0px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 1.0);
 
   background: #1e1e2e;
   background-color: #1e1e2e;
   color: #cdd6f4;
+}
+
+.workspaces {
+  padding: 0px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .workspaces button {
@@ -32,7 +38,7 @@
 }
 
 .workspaces .button-selected {
-  background-color: #a6e3a1;
+  background-color: #b4befe;
 }
 
 .workspaces .button-selected button {
@@ -42,7 +48,10 @@
 
 .symbol {
   padding-right: 14px;
-  font-family: "Iosevka Nerd Font";
+  font-size: 22px;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .disk-symbol {
